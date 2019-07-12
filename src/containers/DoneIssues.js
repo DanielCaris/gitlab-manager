@@ -14,7 +14,7 @@ class DoneIssues extends Component {
   }
 
   getIssuesByLabel(label) {
-    
+
   }
 
   renderIssuesByLabel(label, title) {
@@ -44,6 +44,8 @@ class DoneIssues extends Component {
   render() {
     return (
       <section>
+        <section>issues: {this.props.issues.length}</section>
+        <br/>
         {this.renderIssuesByLabel('Bug', 'Fix')}
         {this.renderIssuesByLabel('Feature', 'Feature')}
         {this.renderIssuesByLabel('Enhancement', 'Mejoras')}
