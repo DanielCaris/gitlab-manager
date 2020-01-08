@@ -18,7 +18,7 @@ const DoneIssues = () => {
     return mergeRequests
       .filter(
         mergeRequest => mergeRequest.mergeStatus === MergeRequestStatus.merged
-      ).length > 0;
+      ).length === mergeRequests.length;
   };
 
   const renderIssuesByLabel = (label: string | null, title: string) => {
