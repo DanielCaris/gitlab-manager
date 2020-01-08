@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Containers
-import DoneIssues from './containers/DoneIssues';
+import DoneIssues from './presentation/components/pages/DoneIssues';
 
 function App() {
   return (

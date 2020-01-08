@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Store
 import { connect } from 'react-redux';
-import { fetch } from '../store/actions/issues';
+import { fetch } from '../../../infrastructure/store/actions/issues';
 
 class DoneIssues extends Component {
   static defaultProps = {
