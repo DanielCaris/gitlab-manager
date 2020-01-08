@@ -5,8 +5,9 @@ import References from './References';
 import TimeStats from './TimeStats';
 import TaskCompletionStatus from './TaskCompletionStatus';
 import { snakeCaseToCamelCase } from '../Text';
+import MergeRequest from './MergeRequest';
 
-enum IssueState {
+export enum IssueState {
   opened = 'opened',
   closed = 'closed'
 }
@@ -49,6 +50,7 @@ export default class Issue {
   discussionLocked?: boolean;
   links?: IssueLinks;
   taskCompletionStatus?: TaskCompletionStatus;
+  relatedMergeRequests?: Array<MergeRequest>;
 
   constructor(id: number, title: string) {
     this.id = id;

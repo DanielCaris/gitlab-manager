@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useFetchIssues from '../../../infrastructure/hooks/useFetchIssues';
 import Issue from '../../../domain/models/Issue';
+import MergeRequest, { MergeRequestStatus } from '../../../domain/models/MergeRequest';
 
 const DoneIssues = () => {
   const [labels] = useState(['Done']);
@@ -11,6 +12,13 @@ const DoneIssues = () => {
     return issues.filter((issue: Issue) => {
       return !labels.find(label => issue.labels && issue.labels.indexOf(label) !== -1);
     });
+  };
+
+  const isMergedMergeRequests = (mergeRequests: MergeRequest[]) => {
+    return mergeRequests
+      .filter(
+        mergeRequest => mergeRequest.mergeStatus === MergeRequestStatus.merged
+      ).length > 0;
   };
 
   const renderIssuesByLabel = (label: string | null, title: string) => {
@@ -26,9 +34,9 @@ const DoneIssues = () => {
       <div style={{ marginBottom: 20 }}>
         <div>{title}:</div>
         <br/>
-        {filterIssues.map(({ iid, title }) => (
+        {filterIssues.map(({ iid, title, relatedMergeRequests }) => (
           <div key={iid}>
-            * #{iid} - {title}
+            * #{iid} - {title} ({isMergedMergeRequests(relatedMergeRequests || []) ? 'Merged': 'Pending'})
           </div>
         ))}
       </div>
