@@ -50,7 +50,6 @@ class DoneIssues extends Component {
         {this.renderIssuesByLabel('Feature', 'Feature')}
         {this.renderIssuesByLabel('Enhancement', 'Mejoras')}
         {this.renderIssuesByLabel('CC', 'Control de Cambios')}
-        {/* {this.renderIssuesByLabel(null, 'Sin Tag')} */}
       </section>
     );
   }

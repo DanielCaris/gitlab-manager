@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import issues from './issues.js';
+import issues from './issues';
 
 export default combineReducers({
   issues
