@@ -15,7 +15,7 @@ const DoneIssues = () => {
   };
 
   const isMergedMergeRequests = (mergeRequests: MergeRequest[]) => {
-    return mergeRequests
+    return mergeRequests.length > 0 && mergeRequests
       .filter(
         mergeRequest => mergeRequest.mergeStatus === MergeRequestStatus.merged
       ).length === mergeRequests.length;
