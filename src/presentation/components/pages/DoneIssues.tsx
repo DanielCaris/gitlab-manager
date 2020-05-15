@@ -4,7 +4,7 @@ import Issue from '../../../domain/models/Issue';
 import MergeRequest, { MergeRequestStatus } from '../../../domain/models/MergeRequest';
 
 const DoneIssues = () => {
-  const [labels] = useState(['Done']);
+  const [labels] = useState(['Done By Dev']);
   const [issues, isLoading] = useFetchIssues(labels);
   const labelsToShow = ['Bug', 'Feature', 'Enhancement', 'CC'];
 
